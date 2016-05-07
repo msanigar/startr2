@@ -19,6 +19,7 @@ var concat       = require('gulp-concat');
 var rename       = require("gulp-rename");
 var imagemin     = require("gulp-imagemin");
 var pngquant     = require('imagemin-pngquant');
+var notify       = require('gulp-notify');
 
 /**
 *
@@ -35,7 +36,12 @@ gulp.task('sass', function() {
   .pipe(sass({outputStyle: 'compressed'}))
   .pipe(prefix('last 2 versions', '> 1%', 'ie 8', 'Android 2', 'Firefox ESR'))
   .pipe(plumber())
-  .pipe(gulp.dest('css'));
+  .pipe(gulp.dest('css'))
+  .pipe(notify({
+      sound: 'Beep',
+      message: 'Such minify, much develop'
+    }
+  ));
 });
 
 /**
@@ -70,7 +76,7 @@ gulp.task('scripts', function() {
   .pipe(rename({
     suffix: ".min",
   }))
-  .pipe(gulp.dest('js'))
+  .pipe(gulp.dest('js'));
 });
 
 /**
