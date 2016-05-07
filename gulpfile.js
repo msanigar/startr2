@@ -1,13 +1,14 @@
 /*=============================================
-=            Gulp Starter by @dope            =
+=            Gulp Startr2 by myles91          =
 =============================================*/
 
 /**
 *
-* The packages we are using
-* Not using gulp-load-plugins as it is nice to see whats here.
+* packages
+* No gulp-load-plugins as this is tidy
 *
 **/
+
 var gulp         = require('gulp');
 var sass         = require('gulp-sass');
 var browserSync  = require('browser-sync');
@@ -28,6 +29,7 @@ var pngquant     = require('imagemin-pngquant');
 * - Autoprefixer
 *
 **/
+
 gulp.task('sass', function() {
   gulp.src('sass/**/*.scss')
   .pipe(sass({outputStyle: 'compressed'}))
@@ -43,6 +45,7 @@ gulp.task('sass', function() {
 * - View project at: localhost:3000
 *
 **/
+
 gulp.task('browser-sync', function() {
   browserSync.init(['css/*.css', 'js/**/*.js', 'index.html'], {
     server: {
@@ -59,6 +62,7 @@ gulp.task('browser-sync', function() {
 * - Uglify
 *
 **/
+
 gulp.task('scripts', function() {
   gulp.src('js/inc/*.js')
   .pipe(concat('app.js'))
@@ -75,6 +79,7 @@ gulp.task('scripts', function() {
 * - Compress them!
 *
 **/
+
 gulp.task('images', function () {
   return gulp.src('images/*')
   .pipe(imagemin({
@@ -93,6 +98,7 @@ gulp.task('images', function () {
 * - Watchs for file changes for images, scripts and sass/css
 *
 **/
+
 gulp.task('default', ['sass', 'browser-sync', 'scripts', 'images'], function () {
   gulp.watch('sass/**/*.scss', ['sass']);
   gulp.watch('js/**/*.js', ['scripts']);

@@ -22,17 +22,25 @@ body {
     padding: 2%;
 }
 
-p, h1, h2, h3, h4, h5, a, span {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+span {
     color: $one;
 }
 
 ::selection {
-  background: $four;
-  color: #fff;
+    background: $four;
+    color: #fff;
 }
+
 ::-moz-selection {
-  background: $four;
-  color: #fff;
+    background: $four;
+    color: #fff;
 }
 
 a:hover {
@@ -54,4 +62,8 @@ footer {
         vertical-align: middle;
         margin: 0;
     }
+}
+
+.copy {
+    @include spanWidth(20);
 }

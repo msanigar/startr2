@@ -70,12 +70,13 @@
     }
 }
 
+
 /*
 * desktop 
 */
 
 @media screen and(min-width: $small-screen) {
-#nav-trigger {
+    #nav-trigger {
         display: none;
     }
 }

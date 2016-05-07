@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     $(document).trigger("setNav");
     console.warn("Startr has started!");
 });
