@@ -1,0 +1,81 @@
+/* MEDIA QUERIES */
+
+.show-for-small,
+.hide-for-small,
+.show-for-medium,
+.hide-for-medium,
+.show-for-large,
+.hide-for-large {
+    display: none;
+}
+
+
+/*
+* smaller than small, show small?
+*/
+
+@media screen and (max-width: $small-screen - 1px) {
+    .show-for-small {
+        display: inherit;
+    }
+}
+
+
+/*
+* small
+*/
+
+@media screen and (min-width: $small-screen + 1px) and (max-width: $medium-screen) {
+    .show-for-small {
+        display: inherit;
+    }
+}
+
+
+/*
+* medium
+*/
+
+@media screen and (min-width: $medium-screen + 1px) and (max-width: $large-screen - 1px) {
+    .show-for-medium {
+        display: inherit;
+    }
+}
+
+
+/*
+* large
+*/
+
+@media screen and (min-width: $large-screen) {
+    .show-for-large {
+        display: inherit;
+    }
+}
+
+
+/*
+* mobile
+*/
+
+@media screen and(max-width: $small-screen) {
+    #nav-trigger {
+        display: block;
+    }
+    nav#nav-main {
+        display: none;
+    }
+    nav#nav-mobile {
+        display: block;
+    }
+}
+
+/*
+* desktop 
+*/
+
+@media screen and(min-width: $small-screen) {
+#nav-trigger {
+        display: none;
+    }
+}

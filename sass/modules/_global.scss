@@ -1,0 +1,57 @@
+header {
+    background-color: $seven;
+    text-align: center;
+    font-size: 3em;
+    font-family: 'Righteous', cursive;
+    max-width: 990px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: $six;
+    padding: 2%;
+    max-width: 990px;
+    margin: 0 auto;
+}
+
+#container {
+    background-color: $seven;
+    display: block;
+    height: auto;
+    overflow: auto;
+    padding: 2%;
+}
+
+p, h1, h2, h3, h4, h5, a, span {
+    color: $one;
+}
+
+::selection {
+  background: $four;
+  color: #fff;
+}
+::-moz-selection {
+  background: $four;
+  color: #fff;
+}
+
+a:hover {
+    color: $five;
+}
+
+span {
+    background-color: $seven;
+}
+
+footer {
+    background-color: $four;
+    text-align: center;
+    padding: 10px;
+    max-width: 990px;
+    margin: 0 auto;
+    p {
+        color: #fff;
+        vertical-align: middle;
+        margin: 0;
+    }
+}

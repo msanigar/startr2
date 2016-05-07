@@ -1,0 +1,51 @@
+/*
+* CORE LAYOUT
+*/
+
+body { 
+  font: {
+  size: 87.5%;
+  family: Arial, Helvetica, sans-serif;
+  }
+  line-height: $line-height;  
+}
+
+h1 {
+  font-size: 1.714285714em; /* 24 / 14 */
+  line-height: $line-height; /* 21 / 14 */
+}
+
+h2 {
+  font-size: 1.5em; /* 21 / 14 */
+  line-height: $line-height; /* 21 / 14 */
+}
+
+p {
+  font-size: 1em; /* 14 / 14 */
+  margin-bottom: 1.5em; /* 21 / 14 */
+}
+
+#container, .inner {
+  margin: 0 auto;
+}
+
+header {
+  min-height: 110px;
+
+  h1 {
+  	margin: 7px 0 0 0;
+	}
+  
+  p {
+  	text-align: center;
+  }
+
+}
+#container {
+  clear: both;
+  max-width: 990px;
+}
+
+.alt {
+  letter-spacing: 0.05em;
+}
