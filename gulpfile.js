@@ -20,6 +20,7 @@ var rename       = require("gulp-rename");
 var imagemin     = require("gulp-imagemin");
 var pngquant     = require('imagemin-pngquant');
 var notify       = require('gulp-notify');
+var sourcemaps   = require('gulp-sourcemaps');
 
 /**
 *
@@ -28,14 +29,17 @@ var notify       = require('gulp-notify');
 * - Compress/Minify
 * - Catch errors (gulp-plumber)
 * - Autoprefixer
+* - Create source maps
 *
 **/
 
 gulp.task('sass', function() {
   gulp.src('sass/**/*.scss')
+  .pipe(sourcemaps.init())
   .pipe(sass({outputStyle: 'compressed'}))
   .pipe(prefix('last 2 versions', '> 1%', 'ie 8', 'Android 2', 'Firefox ESR'))
   .pipe(plumber())
+  .pipe(sourcemaps.write())
   .pipe(gulp.dest('css'))
   .pipe(notify({
       sound: 'Beep',
@@ -66,13 +70,16 @@ gulp.task('browser-sync', function() {
 * Javascript
 * - Concat
 * - Uglify
+* - Create source maps
 *
 **/
 
 gulp.task('scripts', function() {
   gulp.src('js/inc/*.js')
+  .pipe(sourcemaps.init())
   .pipe(concat('app.js'))
   .pipe(uglify())
+  .pipe(sourcemaps.write())
   .pipe(rename({
     suffix: ".min",
   }))
