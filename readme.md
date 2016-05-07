@@ -8,6 +8,9 @@ A starter kit for your frontend workflow.
 
 # Getting Started
 Clone: `https://github.com/myles91/startr2`
+
 Once you have cloned the repo, navigate to the directory via cmd and run:
+
 npm install
+
 gulp
