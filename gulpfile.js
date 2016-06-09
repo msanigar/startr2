@@ -21,6 +21,8 @@ var imagemin     = require("gulp-imagemin");
 var pngquant     = require('imagemin-pngquant');
 var notify       = require('gulp-notify');
 var sourcemaps   = require('gulp-sourcemaps');
+var sassLint 	 = require('gulp-sass-lint');
+var eslint 		 = require('gulp-eslint');
 
 /**
 *
@@ -35,6 +37,9 @@ var sourcemaps   = require('gulp-sourcemaps');
 
 gulp.task('sass', function() {
   gulp.src('sass/**/*.scss')
+  .pipe(sassLint())
+  .pipe(sassLint.format())
+  .pipe(sassLint.failOnError())
   .pipe(sourcemaps.init())
   .pipe(sass({outputStyle: 'compressed'}))
   .pipe(prefix('last 2 versions', '> 1%', 'ie 8', 'Android 2', 'Firefox ESR'))
@@ -77,6 +82,9 @@ gulp.task('browser-sync', function() {
 gulp.task('scripts', function() {
   gulp.src('js/inc/*.js')
   .pipe(sourcemaps.init())
+  .pipe(eslint())
+  .pipe(eslint.format())
+  .pipe(eslint.failAfterError())
   .pipe(concat('app.js'))
   .pipe(uglify())
   .pipe(sourcemaps.write())
